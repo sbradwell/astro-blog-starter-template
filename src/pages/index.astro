@@ -1,50 +1,297 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import MainLayout from '../layouts/MainLayout.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const capabilities = [
+	{
+		title: 'Technology strategy',
+		description:
+			'Platform direction, vendor selection, and roadmap sequencing for carriers and MGUs operating across legacy systems, fragmented workflows, and limited capacity to scale.',
+		detail:
+			'Defines a clear operating model and technology path, aligning platform decisions to reduce fragmentation and support scalable growth.',
+	},
+	{
+		title: 'Modernization',
+		description:
+			'Redesign of underwriting intake, bordereaux processing, policy administration, claims, and reporting where manual handoffs and reconciliation still drive cost and delay.',
+		detail:
+			'Eliminates redundant workflows, reduces rekeying across systems, and creates more consistent, scalable execution.',
+	},
+	{
+		title: 'Applied AI',
+		description:
+			'Practical application of AI across document intake, triage, exception handling, and operational review where value is clear today.',
+		detail:
+			'Moves beyond stalled Copilot adoption and fragmented tooling, identifying where AI can reduce manual processing, improve decision speed, and fit existing operations.',
+	},
+];
+
+const reasons = [
+	'Commercial off-the-shelf options are limited in specialty lines.',
+	'Legacy internal systems and manual workarounds do not scale.',
+	'Property & Casualty platforms rarely fit the product or workflow.',
+];
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
+<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<section class="hero section">
+		<div class="hero-copy">
+			<p class="eyebrow">NorthLine Consulting</p>
+			<h1>Strategy &amp; Technology for Specialty Insurance</h1>
+			<p class="lead">
+				NorthLine advises insurers and MGUs facing complex products, legacy workflows, and
+				pressure to modernize with clarity and control.
 			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
+			<p class="hero-detail">
+				Focus areas include Accident &amp; Health, Employer Stop Loss, and other specialty
+				lines where operations remain hard to standardize.
 			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+			<div class="hero-actions">
+				<button class="button button-primary" type="button" data-open-contact>
+					Start a Conversation
+				</button>
+				<a class="button button-secondary" href="#practice">View Practice</a>
+			</div>
+		</div>
+
+		<div class="hero-panel">
+			<div class="northline-mark" aria-hidden="true">
+				<span class="northline-ring northline-ring-outer"></span>
+				<span class="northline-ring northline-ring-inner"></span>
+				<span class="northline-axis northline-axis-vertical"></span>
+				<span class="northline-axis northline-axis-horizontal"></span>
+				<span class="northline-axis northline-axis-angle"></span>
+				<span class="northline-point"></span>
+			</div>
+		</div>
+	</section>
+
+	<section id="practice" class="section practice-section">
+		<div class="section-heading">
+			<p class="eyebrow">Practice</p>
+			<h2>Scalable operating models for specialty insurance</h2>
+		</div>
+
+		<div class="capability-grid">
+			{capabilities.map((item) => (
+				<article class="card">
+					<h3>{item.title}</h3>
+					<div class="card-body">
+						<p>{item.description}</p>
+					</div>
+					<div class="card-outcome">
+						<p class="card-outcome-label">Outcome</p>
+						<p>{item.detail}</p>
+					</div>
+				</article>
+			))}
+		</div>
+	</section>
+
+	<section id="why" class="section">
+		<div class="section-heading">
+			<p class="eyebrow">Why NorthLine</p>
+			<h2>Specific guidance for specialty carriers and MGUs</h2>
+		</div>
+
+		<div class="reason-list">
+			{reasons.map((reason) => (
+				<div class="reason-item">
+					<span class="reason-line" aria-hidden="true"></span>
+					<p>{reason}</p>
+				</div>
+			))}
+		</div>
+	</section>
+
+	<section id="contact" class="section contact-section">
+		<div class="contact-card">
+			<div>
+				<p class="eyebrow">Contact</p>
+				<h2>Bring the operating problem into focus</h2>
+			</div>
+			<div class="contact-content">
+				<p>
+					NorthLine works with leadership teams facing legacy constraints, scaling pressure, and
+					the need for more modern operating infrastructure.
+				</p>
+				<button class="button button-primary" type="button" data-open-contact>
+					Start a Conversation
+				</button>
+			</div>
+		</div>
+	</section>
+
+	<dialog class="contact-modal" id="contact-modal">
+		<form class="contact-modal-card" id="contact-form" method="dialog" novalidate>
+			<div class="contact-modal-header">
+				<div>
+					<p class="eyebrow">Contact</p>
+					<h2>Start a Conversation</h2>
+				</div>
+				<button class="contact-modal-close" type="button" aria-label="Close form" data-close-contact>
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="contact-form-grid">
+				<label class="field">
+					<span>Name</span>
+					<input id="contact-name" name="name" type="text" autocomplete="name" required />
+				</label>
+
+				<label class="field">
+					<span>Email</span>
+					<input id="contact-email" name="email" type="email" autocomplete="email" required />
+				</label>
+
+				<label class="field">
+					<span>Company</span>
+					<input id="contact-company" name="company" type="text" autocomplete="organization" required />
+				</label>
+
+				<label class="field field-full">
+					<span>Message</span>
+					<textarea
+						id="contact-message"
+						name="message"
+						rows="5"
+						required
+						placeholder="Briefly describe the problem, line, or initiative."
+					></textarea>
+				</label>
+			</div>
+
+			<p class="form-status" id="contact-status" aria-live="polite"></p>
+
+			<div class="contact-modal-actions">
+				<button class="button button-secondary" type="button" data-close-contact>Cancel</button>
+				<button class="button button-primary" type="submit" id="contact-submit">
+					Send Inquiry
+				</button>
+			</div>
+		</form>
+	</dialog>
+</MainLayout>
+
+<script>
+	const dialog = document.querySelector('#contact-modal');
+	const form = document.querySelector('#contact-form');
+	const status = document.querySelector('#contact-status');
+	const submitButton = document.querySelector('#contact-submit');
+	const nameField = document.querySelector('#contact-name');
+	const emailField = document.querySelector('#contact-email');
+	const companyField = document.querySelector('#contact-company');
+	const messageField = document.querySelector('#contact-message');
+	const openButtons = document.querySelectorAll('[data-open-contact]');
+	const closeButtons = document.querySelectorAll('[data-close-contact]');
+
+	if (
+		dialog instanceof HTMLDialogElement &&
+		form instanceof HTMLFormElement &&
+		status instanceof HTMLElement &&
+		submitButton instanceof HTMLButtonElement &&
+		nameField instanceof HTMLInputElement &&
+		emailField instanceof HTMLInputElement &&
+		companyField instanceof HTMLInputElement &&
+		messageField instanceof HTMLTextAreaElement
+	) {
+		const setStatus = (message, tone) => {
+			status.textContent = message;
+			status.dataset.state = tone;
+		};
+
+		const openDialog = () => {
+			dialog.showModal();
+			document.body.classList.add('modal-open');
+			setStatus('', '');
+			window.requestAnimationFrame(() => {
+				const firstField = form.querySelector('input');
+				if (firstField instanceof HTMLInputElement) firstField.focus();
+			});
+		};
+
+		const closeDialog = () => {
+			dialog.close();
+			document.body.classList.remove('modal-open');
+		};
+
+		openButtons.forEach((button) => {
+			button.addEventListener('click', openDialog);
+		});
+
+		closeButtons.forEach((button) => {
+			button.addEventListener('click', closeDialog);
+		});
+
+		dialog.addEventListener('click', (event) => {
+			const bounds = dialog.getBoundingClientRect();
+			const clickedOutside =
+				event.clientX < bounds.left ||
+				event.clientX > bounds.right ||
+				event.clientY < bounds.top ||
+				event.clientY > bounds.bottom;
+
+			if (clickedOutside) closeDialog();
+		});
+
+		dialog.addEventListener('close', () => {
+			document.body.classList.remove('modal-open');
+		});
+
+		form.addEventListener('submit', async (event) => {
+			event.preventDefault();
+
+			if (!form.reportValidity()) return;
+
+			if (messageField.value.trim().length < 20) {
+				setStatus('Add a short note so we have context.', 'error');
+				messageField.focus();
+				return;
+			}
+
+			submitButton.disabled = true;
+			setStatus('Sending...', 'pending');
+
+			try {
+				const payload = {
+					name: nameField.value.trim(),
+					email: emailField.value.trim(),
+					company: companyField.value.trim(),
+					message: messageField.value.trim(),
+				};
+
+				console.log('[contact-form] submitting payload', payload);
+
+				const response = await fetch('/api/contact', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(payload),
+				});
+
+				const result = await response.json();
+
+				console.log('[contact-form] response', {
+					status: response.status,
+					ok: response.ok,
+					result,
+				});
+
+				if (!response.ok) {
+					throw new Error(result.error || 'Message could not be sent.');
+				}
+
+				form.reset();
+				setStatus('Message sent. NorthLine will respond shortly.', 'success');
+			} catch (error) {
+				const message =
+					error instanceof Error ? error.message : 'Message could not be sent.';
+				setStatus(message, 'error');
+			} finally {
+				submitButton.disabled = false;
+			}
+		});
+	}
+</script>
