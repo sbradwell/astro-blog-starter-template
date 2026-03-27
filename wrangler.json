@@ -10,5 +10,9 @@
 	"observability": {
 		"enabled": true
 	},
-	"upload_source_maps": true
+	"upload_source_maps": true,
+	"vars": {
+		"CONTACT_TO_EMAIL": "contact@northline.consulting",
+		"CONTACT_FROM_EMAIL": "website@send.northline.consulting"
+	}
 }
