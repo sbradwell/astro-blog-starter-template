@@ -6,18 +6,18 @@ const isLocalHostname = (hostname: string) =>
 	hostname === '[::1]' ||
 	hostname.endsWith('.localhost');
 
-const buildContentSecurityPolicy = (shouldUpgradeInsecureRequests: boolean) => {
+const buildContentSecurityPolicy = (isLocalRequest: boolean, shouldUpgradeInsecureRequests: boolean) => {
 	const directives = [
 		"default-src 'self'",
 		"base-uri 'self'",
-		"connect-src 'self'",
+		"connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com",
 		"font-src 'self'",
 		"form-action 'self'",
 		"frame-ancestors 'none'",
-		"img-src 'self' data:",
+		"img-src 'self' data: https://www.google-analytics.com",
 		"object-src 'none'",
-		"script-src 'self'",
-		"style-src 'self'",
+		"script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
+		`style-src 'self'${isLocalRequest ? " 'unsafe-inline'" : ''}`,
 	];
 
 	if (shouldUpgradeInsecureRequests) {
@@ -38,11 +38,12 @@ export const onRequest = defineMiddleware(async ({ url }, next) => {
 	const response = await next();
 	const headers = new Headers(response.headers);
 	const isSecureRequest = url.protocol === 'https:';
-	const shouldUpgradeInsecureRequests = !isLocalHostname(url.hostname);
+	const isLocalRequest = isLocalHostname(url.hostname);
+	const shouldUpgradeInsecureRequests = !isLocalRequest;
 
 	headers.set(
 		'Content-Security-Policy',
-		buildContentSecurityPolicy(shouldUpgradeInsecureRequests),
+		buildContentSecurityPolicy(isLocalRequest, shouldUpgradeInsecureRequests),
 	);
 	headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
 	headers.set('X-Content-Type-Options', 'nosniff');
