@@ -9,6 +9,15 @@ const messageField = document.querySelector('#contact-message');
 const openButtons = document.querySelectorAll('[data-open-contact]');
 const closeButtons = document.querySelectorAll('[data-close-contact]');
 
+const trackContactEvent = (eventName) => {
+	if (typeof window.gtag !== 'function') return;
+
+	window.gtag('event', eventName, {
+		event_category: 'engagement',
+		event_label: 'contact_form',
+	});
+};
+
 if (
 	dialog instanceof HTMLDialogElement &&
 	form instanceof HTMLFormElement &&
@@ -26,6 +35,7 @@ if (
 
 	const openDialog = () => {
 		dialog.showModal();
+		trackContactEvent('contact_open');
 		document.body.classList.add('modal-open');
 		setStatus('', '');
 		window.requestAnimationFrame(() => {
@@ -108,6 +118,7 @@ if (
 
 			form.reset();
 			setStatus('Message sent. NorthLine will respond shortly.', 'success');
+			trackContactEvent('contact_submit');
 		} catch (error) {
 			const message =
 				error instanceof Error ? error.message : 'Message could not be sent.';
