@@ -36,11 +36,66 @@ const reasons = [
 	'Bridges business, IT, compliance, and operations to move from pilot to production.',
 	'Helps your team adopt and scale AI without becoming dependent on another outside platform.',
 ];
+
+const structuredData = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'Organization',
+		name: 'NorthLine Consulting',
+		url: 'https://northline.consulting',
+		logo: 'https://northline.consulting/logo-icon.svg',
+		image: 'https://northline.consulting/og-image.png',
+		description:
+			'NorthLine Consulting helps specialty insurers deploy governed AI agents inside their Microsoft environment to automate real insurance workflows securely.',
+		founder: {
+			'@type': 'Person',
+			name: 'Steve Bradwell',
+		},
+		email: 'steve.bradwell@northline.consulting',
+		areaServed: {
+			'@type': 'Place',
+			name: 'North America',
+		},
+		knowsAbout: [
+			'Insurance AI consulting',
+			'Specialty insurance',
+			'Governed AI deployment',
+			'Microsoft-aligned AI architecture',
+			'Insurance workflow automation',
+			'MGU operating models',
+			'Claims document processing',
+			'Bordereaux processing',
+			'Statutory reporting',
+		],
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'Service',
+		name: 'Insurance AI Consulting',
+		provider: {
+			'@type': 'Organization',
+			name: 'NorthLine Consulting',
+			url: 'https://northline.consulting',
+		},
+		serviceType: 'Insurance AI consulting',
+		areaServed: {
+			'@type': 'Place',
+			name: 'North America',
+		},
+		audience: {
+			'@type': 'Audience',
+			audienceType: 'Specialty insurers, MGUs, and regulated insurance organizations',
+		},
+		description:
+			'Governed AI consulting for specialty insurers, focused on deploying AI agents inside Microsoft environments with governance, control, and workflow integration.',
+	},
+];
 ---
 
 <MainLayout
 	title="Insurance AI Consulting for Specialty Insurers | NorthLine Consulting"
 	description={SITE_DESCRIPTION}
+	structuredData={structuredData}
 >
 	<section class="hero section">
 		<div class="hero-copy">

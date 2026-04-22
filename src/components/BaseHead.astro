@@ -3,15 +3,23 @@ interface Props {
 	title: string;
 	description: string;
 	image?: string;
+	structuredData?: object | object[];
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const { title, description, image = '/favicon.svg' } = Astro.props;
+const { title, description, structuredData } = Astro.props;
+const socialImageURL = 'https://northline.consulting/og-image.png';
+const structuredDataBlocks = structuredData
+	? Array.isArray(structuredData)
+		? structuredData
+		: [structuredData]
+	: [];
 ---
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png" />
 <meta name="generator" content={Astro.generator} />
 
 <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
@@ -27,10 +35,18 @@ const { title, description, image = '/favicon.svg' } = Astro.props;
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={socialImageURL} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 
-<meta property="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={socialImageURL} />
+
+{
+	structuredDataBlocks.map((block) => (
+		<script type="application/ld+json" set:html={JSON.stringify(block)}></script>
+	))
+}
