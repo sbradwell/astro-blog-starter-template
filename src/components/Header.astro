@@ -1,11 +1,13 @@
 ---
 import { SITE_TITLE } from '../consts';
 
-const isArchitecturePage = Astro.url.pathname === '/architecture' || Astro.url.pathname === '/architecture/';
+const isArchitecturePage =
+	Astro.url.pathname === '/insurance-ai-deployments' ||
+	Astro.url.pathname === '/insurance-ai-deployments/';
 const currentRealityHref = isArchitecturePage ? '/#current-reality' : '#current-reality';
 const practiceHref = isArchitecturePage ? '/#practice' : '#practice';
 const aiPlatformHref = isArchitecturePage ? '/#ai-platform' : '#ai-platform';
-const blueprintHref = '/architecture';
+const blueprintHref = '/insurance-ai-deployments';
 const whyHref = isArchitecturePage ? '/#why' : '#why';
 const getStartedHref = isArchitecturePage ? '/#contact' : '#contact';
 ---
