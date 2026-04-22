@@ -123,7 +123,16 @@ textarea {
 	scroll-margin-top: 5.5rem;
 }
 
-#practice {
+.practice-section,
+.ai-platform-section,
+.why-section {
+	padding-top: 7rem;
+}
+
+#current-reality,
+#practice,
+#ai-platform,
+#why {
 	scroll-margin-top: -1rem;
 }
 
@@ -334,28 +343,28 @@ textarea {
 }
 
 .card {
-	min-height: 19rem;
+	min-height: 16.75rem;
 	display: grid;
 	grid-template-rows: auto 1fr auto;
 	align-content: start;
-	gap: 1rem;
+	gap: 0.8rem;
 }
 
 .card-body {
 	display: grid;
 	align-content: start;
-	min-height: 12rem;
+	min-height: 7.5rem;
 }
 
 .card-outcome {
 	display: grid;
-	gap: 0.55rem;
-	padding: 1rem 1rem 1.05rem;
+	gap: 0.45rem;
+	padding: 0.85rem 0.9rem 0.95rem;
 	border: 1px solid rgba(255, 255, 255, 0.06);
 	border-radius: 1.1rem;
 	background: rgba(255, 255, 255, 0.035);
 	align-content: start;
-	min-height: 11.4rem;
+	min-height: 11.5rem;
 }
 
 .card-outcome-label {
@@ -375,6 +384,19 @@ textarea {
 	display: grid;
 	gap: 1rem;
 	max-width: 58rem;
+}
+
+.platform-approach-card,
+.architecture-frame {
+	position: relative;
+	border: 1px solid var(--surface-line);
+	border-radius: 2rem;
+	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 45%),
+		var(--surface);
+	backdrop-filter: blur(18px);
+	box-shadow: var(--shadow);
+	overflow: hidden;
 }
 
 .reason-item {
@@ -398,8 +420,334 @@ textarea {
 	background: linear-gradient(90deg, var(--accent), transparent);
 }
 
+.platform-approach-card {
+	display: grid;
+	grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+	gap: 2rem;
+	padding: 2rem;
+}
+
+.adoption-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+	gap: 1.5rem;
+}
+
+.adoption-card {
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+}
+
+.adoption-list {
+	display: grid;
+	gap: 1rem;
+}
+
+.adoption-list-item {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 0.9rem;
+	align-items: start;
+}
+
+.stall-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.75rem;
+}
+
+.stall-item {
+	display: grid;
+	align-items: center;
+	min-height: 6rem;
+	padding: 0.9rem 1rem;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	border-radius: 1rem;
+	background: rgba(255, 255, 255, 0.025);
+}
+
+.stall-item h4 {
+	margin: 0;
+	color: var(--text-strong);
+	font-family: "Atkinson", sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	letter-spacing: 0;
+	line-height: 1.35;
+}
+
+.adoption-subsection {
+	align-content: start;
+}
+
+.adoption-cta-group {
+	display: grid;
+	gap: 0.7rem;
+	margin-top: 0.2rem;
+}
+
+.adoption-heading {
+	margin-bottom: 0;
+}
+
+.adoption-line {
+	color: var(--text-strong);
+	font-size: 1rem;
+}
+
+.adoption-line-strong {
+	color: var(--accent-strong);
+}
+
+.section-cta {
+	display: flex;
+	justify-content: center;
+	padding-top: 1.75rem;
+}
+
+.platform-points {
+	display: grid;
+	gap: 1rem;
+}
+
+.platform-point {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 1rem;
+	align-items: start;
+}
+
+.platform-cta {
+	display: grid;
+	align-content: space-between;
+	gap: 1.25rem;
+	padding: 1.2rem;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	border-radius: 1.3rem;
+	background: rgba(255, 255, 255, 0.035);
+}
+
+.architecture-page-intro {
+	display: grid;
+	gap: 1.25rem;
+}
+
+.architecture-page-intro .section-heading {
+	margin-bottom: 0.5rem;
+}
+
+.architecture-page-copy {
+	max-width: 56rem;
+}
+
+.architecture-page-copy-emphasis {
+	color: var(--text-strong);
+}
+
+.architecture-frame {
+	padding: 2rem;
+}
+
+.architecture-frame::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+	background-size: 112px 112px;
+	mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.36), transparent 82%);
+	opacity: 0.3;
+}
+
+.architecture-frame::after {
+	content: "";
+	position: absolute;
+	inset: auto -10% -20% 35%;
+	height: 17.5rem;
+	background: radial-gradient(circle, var(--accent-glow), transparent 60%);
+	filter: blur(36px);
+	pointer-events: none;
+}
+
+.architecture-header,
+.architecture-center {
+	position: relative;
+	z-index: 1;
+}
+
+.architecture-header {
+	display: grid;
+	gap: 0.75rem;
+	margin-bottom: 1.75rem;
+}
+
+.architecture-header h2 {
+	max-width: 11ch;
+	font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.architecture-diagram {
+	position: relative;
+	z-index: 1;
+	display: grid;
+	grid-template-columns: 6rem minmax(0, 1fr) 6rem;
+	gap: 1.35rem;
+	align-items: stretch;
+}
+
+.architecture-pillar {
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	text-align: center;
+	padding: 1.15rem 0.8rem;
+	border: 1px solid var(--surface-line);
+	border-radius: 1.5rem;
+	background: rgba(255, 255, 255, 0.02);
+	color: var(--text-muted);
+	letter-spacing: 0.08em;
+	font-size: 0.82rem;
+	text-transform: uppercase;
+	min-height: 52.5rem;
+}
+
+.architecture-pillar strong {
+	color: var(--text-strong);
+	font-size: 0.9rem;
+	letter-spacing: 0.12em;
+	margin-bottom: 0.75rem;
+}
+
+.architecture-center {
+	display: grid;
+	gap: 1rem;
+}
+
+.architecture-layer {
+	position: relative;
+	display: grid;
+	gap: 0.9rem;
+	padding: 1.25rem 1.35rem 1.4rem;
+	border: 1px solid var(--surface-line);
+	border-radius: 1.75rem;
+	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 45%),
+		var(--surface);
+	box-shadow: var(--shadow);
+}
+
+.architecture-layer::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: -1.2rem;
+	width: 1px;
+	height: 1.25rem;
+	background: linear-gradient(180deg, rgba(124, 216, 242, 0.56), transparent);
+}
+
+.architecture-layer:last-child::before {
+	display: none;
+}
+
+.architecture-layer-header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+}
+
+.architecture-layer-title {
+	color: var(--text-strong);
+	font-size: 1.12rem;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+
+.architecture-layer-note {
+	color: var(--text-muted);
+	font-size: 0.9rem;
+}
+
+.architecture-chips {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	gap: 0.75rem;
+}
+
+.architecture-chips-four {
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.architecture-chips-three {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.architecture-chip {
+	min-height: 4.7rem;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	padding: 0.85rem 0.75rem;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	border-radius: 1.1rem;
+	background: rgba(255, 255, 255, 0.035);
+	text-align: center;
+	font-size: 0.97rem;
+	line-height: 1.3;
+}
+
+.architecture-layer-control {
+	border-color: var(--surface-line-strong);
+	background:
+		linear-gradient(180deg, rgba(124, 216, 242, 0.08), rgba(255, 255, 255, 0.02) 44%),
+		var(--surface-strong);
+	box-shadow:
+		0 28px 80px rgba(0, 0, 0, 0.34),
+		inset 0 0 0 1px rgba(124, 216, 242, 0.06),
+		0 0 0 1px rgba(124, 216, 242, 0.06);
+}
+
+.architecture-layer-control::after {
+	content: "";
+	position: absolute;
+	inset: auto 18% -26% 18%;
+	height: 8.75rem;
+	background: radial-gradient(circle, var(--accent-glow), transparent 65%);
+	filter: blur(22px);
+	pointer-events: none;
+}
+
+.architecture-layer-control .architecture-layer-title {
+	font-size: 1.32rem;
+	color: var(--accent-strong);
+}
+
+.architecture-layer-control .architecture-chip {
+	font-size: 0.9rem;
+}
+
+.architecture-tagline {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 0.1rem;
+	color: var(--text-muted);
+	font-size: 0.92rem;
+	letter-spacing: 0.02em;
+}
+
 .contact-section {
 	padding-bottom: 4rem;
+}
+
+.architecture-contact-section {
+	padding-top: 2rem;
 }
 
 .contact-card {
@@ -536,7 +884,10 @@ textarea {
 
 @media (max-width: 960px) {
 	.hero,
-	.contact-card {
+	.contact-card,
+	.platform-approach-card,
+	.adoption-grid,
+	.stall-grid {
 		grid-template-columns: 1fr;
 	}
 
@@ -567,6 +918,33 @@ textarea {
 	.section {
 		padding: 5rem 0;
 	}
+
+	.practice-section,
+	.ai-platform-section,
+	.why-section {
+		padding-top: 5rem;
+	}
+
+	.architecture-contact-section {
+		padding-top: 1.5rem;
+	}
+
+	.architecture-diagram {
+		grid-template-columns: 1fr;
+	}
+
+	.architecture-pillar {
+		writing-mode: initial;
+		transform: none;
+		min-height: auto;
+		padding: 1rem;
+	}
+
+	.architecture-chips,
+	.architecture-chips-three,
+	.architecture-chips-four {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
 }
 
 @media (max-width: 720px) {
@@ -583,14 +961,29 @@ textarea {
 		scroll-margin-top: 7rem;
 	}
 
-	#practice {
+	.practice-section,
+	.ai-platform-section,
+	.why-section {
+		padding-top: 4rem;
+	}
+
+	.architecture-contact-section {
+		padding-top: 1.25rem;
+	}
+
+	#current-reality,
+	#practice,
+	#ai-platform,
+	#why {
 		scroll-margin-top: 7rem;
 	}
 
 	.hero-panel,
 	.card,
 	.contact-card,
-	.contact-modal-card {
+	.contact-modal-card,
+	.platform-approach-card,
+	.architecture-frame {
 		padding: 1.35rem;
 		border-radius: 1.5rem;
 	}
@@ -625,6 +1018,21 @@ textarea {
 
 	.contact-modal-actions .button {
 		width: 100%;
+	}
+
+	.architecture-chips,
+	.architecture-chips-three,
+	.architecture-chips-four {
+		grid-template-columns: 1fr;
+	}
+
+	.architecture-layer {
+		padding: 1.1rem;
+		border-radius: 1.4rem;
+	}
+
+	.architecture-tagline {
+		justify-content: flex-start;
 	}
 }
 

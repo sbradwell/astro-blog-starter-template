@@ -1,3 +1,3 @@
 export const SITE_TITLE = 'NorthLine Consulting';
 export const SITE_DESCRIPTION =
-	'Technology strategy, modernization, and AI consulting for specialty lines insurance carriers and MGUs.';
+	'AI strategy, architecture, and governance for insurance carriers and MGUs operating in complex regulated environments.';
