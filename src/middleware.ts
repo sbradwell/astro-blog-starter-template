@@ -16,7 +16,7 @@ const buildContentSecurityPolicy = (isLocalRequest: boolean, shouldUpgradeInsecu
 		"frame-ancestors 'none'",
 		"img-src 'self' data: https://www.google-analytics.com",
 		"object-src 'none'",
-		"script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
+		`script-src 'self' https://www.googletagmanager.com${isLocalRequest ? " 'unsafe-inline'" : ''}`,
 		`style-src 'self'${isLocalRequest ? " 'unsafe-inline'" : ''}`,
 	];
 

@@ -1,51 +1,55 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { SITE_DESCRIPTION } from '../consts';
 
 export const prerender = false;
 
 const capabilities = [
 	{
-		title: 'AI Strategy & Operating Model',
+		title: 'AI Use Case & Operating Model',
 		description:
-			'Define where AI creates real value and what must be in place before deploying it.',
+			'Identify the workflows where AI can create real value, define what governance and controls are required, and align business, IT, and compliance before deployment begins.',
 		detail:
-			'A clear operating model and roadmap aligned to real execution constraints. Designed to be delivered iteratively to ensure the fastest path to value.',
+			'A clear roadmap for governed AI deployment tied to real operating pain points and practical execution constraints.',
 	},
 	{
-		title: 'AI Control Plane & Platform Foundation',
+		title: 'Microsoft-Aligned AI Foundation',
 		description:
-			'Implement a governed AI control plane aligned to your identity, data, and policy environment.',
+			'Configure the controls, identity model, access patterns, and integration approach required to deploy AI safely inside your Microsoft environment.',
 		detail:
-			'A governed AI control plane integrated with Microsoft 365 and Azure, enabling secure, policy-aligned agent deployment across Teams, Word, Excel, and your core systems.',
+			'A secure foundation for governed AI deployment across Microsoft 365, Azure, Teams, documents, and core insurance workflows.',
 	},
 	{
-		title: 'Applied Agentic Process Automation',
+		title: 'Purpose-Built Insurance Agents',
 		description:
-			'Deploy purpose-built agents across underwriting, claims, reporting, and operations.',
+			'Deploy purpose-built AI agents for underwriting, claims, reporting, and operations—focused on the workflows where manual effort, delays, and duplication create the most drag.',
 		detail:
-			'Offload repetitive tasks and scale throughput with the same staffing levels, delivering measurable impact to expense ratio, underwriting capacity, and combined ratio.',
+			'Reduced manual workload, better throughput, and measurable business impact without adding another disconnected system.',
 	},
 ];
 
 const reasons = [
-	'Built for regulated insurance environments where control is non-negotiable.',
-	'Designed for Microsoft-first organizations that will not move AI outside their governance model.',
-	'Deep expertise across P&C, Farm, A&H, and stop-loss.',
-	'Bridges business, IT, and compliance to move beyond fragmented AI efforts.',
-	'Enables your team to adopt, operate, and scale AI, not depend on vendors.',
+	'Built for regulated insurance environments where governance is non-negotiable.',
+	'Designed for Microsoft-first organizations that want AI deployed inside their own tenant.',
+	'Designed with awareness of regulatory expectations (including NAIC AI guidance) around governance, transparency, and human oversight.',
+	'Deep experience across specialty insurance operations, architecture, and workflow design.',
+	'Bridges business, IT, compliance, and operations to move from pilot to production.',
+	'Helps your team adopt and scale AI without becoming dependent on another outside platform.',
 ];
 ---
 
-<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<MainLayout
+	title="Insurance AI Consulting for Specialty Insurers | NorthLine Consulting"
+	description={SITE_DESCRIPTION}
+>
 	<section class="hero section">
 		<div class="hero-copy">
 			<p class="eyebrow">NorthLine Consulting</p>
-			<h1>Move beyond AI pilots. Make AI real—under governance.</h1>
+			<h1>Deploy AI agents that run real insurance workflows</h1>
 			<p class="lead">
-				NorthLine helps insurers realize the value of Agentic AI Process Automation for
-				regulated environments, all within your own Microsoft and Azure tenant, in partnership
-				with your IT and compliance teams.
+				NorthLine helps specialty insurers deploy governed AI agents inside their Microsoft
+				environment&mdash;turning manual workflows into secure, production-ready automation aligned
+				with IT and compliance.
 			</p>
 			<div class="hero-actions">
 				<button class="button button-primary" type="button" data-open-contact>
@@ -70,7 +74,22 @@ const reasons = [
 	<section id="current-reality" class="section adoption-section">
 		<div class="section-heading">
 			<p class="eyebrow">Current Reality</p>
-			<h2>AI adoption is already happening. It&apos;s just not controlled.</h2>
+			<h2>AI adoption is already happening. It&apos;s just not governed.</h2>
+			<p class="hero-detail">
+				NorthLine provides insurance AI consulting focused on specialty carriers, MGUs, and
+				regulated insurance environments.
+			</p>
+			<p class="lead">
+				Business teams are already experimenting with AI to keep up with complexity and
+				workload. Meanwhile, IT, cyber, and compliance teams are trying to protect data,
+				control access, and reduce risk. The result is stalled pilots, fragmented tools, and
+				no clear path to production.
+			</p>
+			<p class="hero-detail">
+				Example use cases: RFP intake, setup, and triage; claims document processing and
+				adjudication support; financial reconciliation; bordereaux processing and
+				reconciliation; statutory reporting.
+			</p>
 		</div>
 
 		<div class="adoption-grid">
@@ -78,22 +97,25 @@ const reasons = [
 				<div class="adoption-list">
 					<div class="adoption-list-item">
 						<span class="reason-line" aria-hidden="true"></span>
-						<p>Business teams are using unapproved AI tools to keep up with workload.</p>
+						<p>No defined operating model for AI</p>
 					</div>
 					<div class="adoption-list-item">
 						<span class="reason-line" aria-hidden="true"></span>
-						<p>IT and cyber teams are blocking AI to protect data and compliance.</p>
+						<p>No control over data, model usage, or access</p>
 					</div>
 					<div class="adoption-list-item">
 						<span class="reason-line" aria-hidden="true"></span>
-						<p>Copilot pilots are ending without a clear path forward.</p>
+						<p>Disconnected tools and duplicated workflows</p>
 					</div>
 					<div class="adoption-list-item">
 						<span class="reason-line" aria-hidden="true"></span>
-						<p>Manual processes are still breaking under volume and complexity.</p>
+						<p>No auditability in regulated environments</p>
 					</div>
 				</div>
-				<p class="adoption-line">This creates fragmentation, risk, and missed opportunity.</p>
+				<p class="adoption-line">
+					NorthLine provides a governed path to deploy AI inside your environment, not around
+					it.
+				</p>
 			</div>
 
 			<div class="platform-cta adoption-subsection">
@@ -103,10 +125,10 @@ const reasons = [
 				</div>
 				<div class="stall-grid">
 					<div class="stall-item">
-						<h4>No defined operating model</h4>
+						<h4>No defined operating model for AI</h4>
 					</div>
 					<div class="stall-item">
-						<h4>No control over model usage or data</h4>
+						<h4>No control over data, model usage, or access</h4>
 					</div>
 					<div class="stall-item">
 						<h4>Disconnected tools and duplicated workflows</h4>
@@ -117,7 +139,8 @@ const reasons = [
 				</div>
 				<div class="adoption-cta-group">
 					<p class="adoption-line adoption-line-strong">
-						NorthLine provides a governed path forward.
+						NorthLine provides a governed path to deploy AI inside your environment, not
+						around it.
 					</p>
 					<a class="button button-secondary" href="#practice">Review our 3 Phase Practice</a>
 				</div>
@@ -128,7 +151,7 @@ const reasons = [
 	<section id="practice" class="section practice-section">
 		<div class="section-heading">
 			<p class="eyebrow">Practice</p>
-			<h2>Governed AI adoption for insurance</h2>
+			<h2>Governed AI deployment for specialty insurance</h2>
 		</div>
 
 		<div class="capability-grid">
@@ -153,16 +176,13 @@ const reasons = [
 
 	<section id="ai-platform" class="section ai-platform-section">
 		<div class="section-heading">
-			<p class="eyebrow">AI Platform Approach</p>
-			<h2>Control before automation</h2>
+			<p class="eyebrow">How We Deploy AI</p>
+			<h2>Deploy AI inside your environment, not outside it</h2>
 			<p class="lead">
-				NorthLine assesses your environment, aligns controls to your use cases, and implements a
-				governed AI platform and purpose built, human augmenting, agentic workflows within your
-				Microsoft tenant.
-			</p>
-			<p class="hero-detail">
-				This enables purpose-built agents to be deployed safely under your policies, data
-				boundaries, and governance model.
+				NorthLine helps insurers deploy governed AI agents inside their own Microsoft tenant.
+				That means AI is integrated with your existing identity, security, data, and policy
+				environment&mdash;without creating another external layer that duplicates data or increases
+				leakage risk.
 			</p>
 		</div>
 
@@ -170,32 +190,32 @@ const reasons = [
 			<div class="platform-points">
 				<div class="platform-point">
 					<span class="reason-line" aria-hidden="true"></span>
-					<p>Secure access enforced through identity and API control.</p>
+					<p>Secure access aligned to your identity and permissions model</p>
 				</div>
 				<div class="platform-point">
 					<span class="reason-line" aria-hidden="true"></span>
-					<p>Governed model usage within an AI control plane.</p>
+					<p>Governed model usage with policy and approval controls</p>
 				</div>
 				<div class="platform-point">
 					<span class="reason-line" aria-hidden="true"></span>
-					<p>Separation of systems of record, documents, and AI execution layers.</p>
+					<p>Integration with documents, systems, and workflows already in use</p>
 				</div>
 				<div class="platform-point">
 					<span class="reason-line" aria-hidden="true"></span>
-					<p>Event-driven integration without duplicating systems.</p>
+					<p>Event-driven architecture without duplicating systems of record</p>
 				</div>
 				<div class="platform-point">
 					<span class="reason-line" aria-hidden="true"></span>
-					<p>Full observability, auditability, and cost visibility.</p>
+					<p>Auditability, observability, and cost visibility from day one</p>
 				</div>
 			</div>
 
 			<div class="platform-cta">
 				<p>
-					We align your controls, data, and use cases so AI can be deployed safely inside your
-					environment, not outside of it.
+					The result is practical AI deployment that supports business outcomes while staying
+					aligned with IT, cyber, and compliance.
 				</p>
-				<a class="button button-secondary" href="/architecture">Explore the Platform Blueprint</a>
+				<a class="button button-secondary" href="/architecture">Explore the Deployment Blueprint</a>
 			</div>
 		</div>
 	</section>
@@ -203,7 +223,7 @@ const reasons = [
 	<section id="why" class="section why-section">
 		<div class="section-heading">
 			<p class="eyebrow">Why NorthLine</p>
-			<h2>Built for complexity. Designed for control.</h2>
+			<h2>Built for specialty insurance. Designed for governed execution.</h2>
 		</div>
 
 		<div class="reason-list">
@@ -220,12 +240,13 @@ const reasons = [
 		<div class="contact-card">
 			<div>
 				<p class="eyebrow">Contact</p>
-				<h2>Bring the operating challenge into focus</h2>
+				<h2>Bring one workflow into focus</h2>
 			</div>
 			<div class="contact-content">
 				<p>
-					NorthLine works with insurance leadership teams defining AI strategy, architecture,
-					governance, and controlled process automation in complex regulated environments.
+					NorthLine works with insurance leadership teams to identify high-value AI use cases,
+					design the right governance approach, and deploy controlled automation inside complex
+					regulated environments.
 				</p>
 				<button class="button button-primary" type="button" data-open-contact>
 					Start a Conversation

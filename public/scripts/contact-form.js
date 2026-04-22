@@ -94,8 +94,6 @@ if (
 				message: messageField.value.trim(),
 			};
 
-			console.log('[contact-form] submitting payload', payload);
-
 			const response = await fetch('/api/contact', {
 				method: 'POST',
 				headers: {
@@ -105,12 +103,6 @@ if (
 			});
 
 			const result = await response.json();
-
-			console.log('[contact-form] response', {
-				status: response.status,
-				ok: response.ok,
-				result,
-			});
 
 			if (!response.ok) {
 				throw new Error(result.error || 'Message could not be sent.');
