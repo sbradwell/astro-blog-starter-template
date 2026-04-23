@@ -131,8 +131,8 @@ textarea {
 
 #current-reality,
 #practice,
-#common-workflows,
-#ai-platform,
+#agents,
+#platform,
 #why {
 	scroll-margin-top: -1rem;
 }
@@ -342,6 +342,34 @@ textarea {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 1.5rem;
+}
+
+.agent-library {
+	padding: 1.5rem;
+	border: 1px solid var(--surface-line);
+	border-radius: 1.8rem;
+	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 42%),
+		var(--surface);
+	box-shadow: var(--shadow);
+}
+
+.agent-library-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.5rem;
+}
+
+.agent-library-intro {
+	display: grid;
+	gap: 0.75rem;
+	grid-column: 1 / -1;
+	max-width: none;
+	margin-bottom: 0;
+}
+
+.agent-library-intro .lead {
+	max-width: none;
 }
 
 .workflow-savings-grid {
@@ -1059,8 +1087,8 @@ textarea {
 
 	#current-reality,
 	#practice,
-	#common-workflows,
-	#ai-platform,
+	#agents,
+	#platform,
 	#why {
 		scroll-margin-top: 7rem;
 	}

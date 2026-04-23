@@ -1,0 +1,64 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { COMMON_WORKFLOWS } from '../consts';
+
+const pageTitle = 'AI Use Cases for Insurance Workflows | NorthLine';
+const pageDescription =
+	'Examples of governed AI agents that support specialty insurance workflows inside controlled operating environments.';
+---
+
+<MainLayout title={pageTitle} description={pageDescription}>
+	<section class="section architecture-page-intro">
+		<div class="section-heading">
+			<p class="eyebrow">Agents</p>
+			<h1>AI agents for high-friction insurance workflows</h1>
+			<p class="lead">
+				NorthLine builds governed AI agents deployed inside specialty insurance environments.
+				They support real workflows, integrate with existing systems, and operate within the
+				control structure already required by the business.
+			</p>
+		</div>
+
+		<div class="agent-library">
+			<div class="agent-library-grid">
+				<div class="agent-library-intro">
+					<p class="panel-label">Agent Library</p>
+					<p class="lead">
+						NorthLine is building a library of reusable AI agents that help specialty insurers
+						offload complex, repetitive administrative work&mdash;producing structured outputs ready
+						for human review and decision-making.
+					</p>
+				</div>
+
+				{COMMON_WORKFLOWS.map((workflow) => (
+					<article class="workflow-card">
+						<h3>{workflow.title}</h3>
+						<p>{workflow.problem}</p>
+						<div class="workflow-opportunity">
+							<p class="workflow-opportunity-label">How The Agent Supports It</p>
+							<p>{workflow.opportunity}</p>
+						</div>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="section contact-section architecture-contact-section">
+		<div class="contact-card">
+			<div>
+				<p class="eyebrow">Next Step</p>
+				<h2>See how these agents are deployed safely</h2>
+			</div>
+			<div class="contact-content">
+				<p>
+					NorthLine helps specialty insurers move from agent opportunity to governed deployment
+					inside Microsoft-aligned environments.
+				</p>
+				<a class="button button-secondary" href="/insurance-ai-deployment">
+					Explore the Platform
+				</a>
+			</div>
+		</div>
+	</section>
+</MainLayout>

@@ -4,14 +4,14 @@ import { SITE_TITLE } from '../consts';
 const isSubpage =
 	Astro.url.pathname === '/insurance-ai-deployment' ||
 	Astro.url.pathname === '/insurance-ai-deployment/' ||
-	Astro.url.pathname === '/insurance-ai-workflows' ||
-	Astro.url.pathname === '/insurance-ai-workflows/';
+	Astro.url.pathname === '/specialty-insurance-ai-agents' ||
+	Astro.url.pathname === '/specialty-insurance-ai-agents/';
 const currentRealityHref = isSubpage ? '/#current-reality' : '#current-reality';
 const practiceHref = isSubpage ? '/#practice' : '#practice';
-const commonWorkflowsHref = isSubpage ? '/#common-workflows' : '#common-workflows';
-const aiPlatformHref = isSubpage ? '/#ai-platform' : '#ai-platform';
-const blueprintHref = '/insurance-ai-deployment';
-const workflowsHref = '/insurance-ai-workflows';
+const agentsHref = isSubpage ? '/#agents' : '#agents';
+const platformHref = isSubpage ? '/#platform' : '#platform';
+const platformPageHref = '/insurance-ai-deployment';
+const workflowsHref = '/specialty-insurance-ai-agents';
 const whyHref = isSubpage ? '/#why' : '#why';
 const getStartedHref = isSubpage ? '/#contact' : '#contact';
 ---
@@ -56,39 +56,39 @@ const getStartedHref = isSubpage ? '/#contact' : '#contact';
 
 		<div class="nav-links">
 			<a href={currentRealityHref}>Current Reality</a>
-			<a href={practiceHref}>Practice</a>
+			<a href={practiceHref}>How it Works</a>
 			<div class="nav-subnav" data-subnav>
 				<div class="nav-subnav-trigger">
-					<a class="nav-primary-link" href={commonWorkflowsHref}>Common Workflows</a>
+					<a class="nav-primary-link" href={agentsHref}>Agents</a>
 					<button
 						class="nav-subnav-toggle"
 						type="button"
 						aria-expanded="false"
-						aria-label="Open Common Workflows links"
+						aria-label="Open Agents links"
 						data-subnav-toggle
 					>
 						<span class="nav-subnav-chevron" aria-hidden="true">▾</span>
 					</button>
 				</div>
 				<div class="nav-subnav-menu" hidden>
-					<a class="nav-sublink" href={workflowsHref}>Insurance AI Workflows</a>
+					<a class="nav-sublink" href={workflowsHref}>Insurance Workflow Agents</a>
 				</div>
 			</div>
 			<div class="nav-subnav" data-subnav>
 				<div class="nav-subnav-trigger">
-					<a class="nav-primary-link" href={aiPlatformHref}>How We Deploy AI</a>
+					<a class="nav-primary-link" href={platformHref}>Platform</a>
 					<button
 						class="nav-subnav-toggle"
 						type="button"
 						aria-expanded="false"
-						aria-label="Open How We Deploy AI links"
+						aria-label="Open Platform links"
 						data-subnav-toggle
 					>
 						<span class="nav-subnav-chevron" aria-hidden="true">▾</span>
 					</button>
 				</div>
 				<div class="nav-subnav-menu" hidden>
-					<a class="nav-sublink" href={blueprintHref}>Blueprint</a>
+					<a class="nav-sublink" href={platformPageHref}>Insurance AI Platform</a>
 				</div>
 			</div>
 			<a href={whyHref}>Why NorthLine</a>
