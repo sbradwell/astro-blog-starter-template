@@ -1,6 +1,6 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { SITE_DESCRIPTION } from '../consts';
+import { SITE_DESCRIPTION, WORKFLOW_SAVINGS } from '../consts';
 
 export const prerender = false;
 
@@ -134,43 +134,26 @@ const structuredData = [
 				NorthLine provides insurance AI consulting focused on specialty carriers, MGUs, and
 				regulated insurance environments.
 			</p>
-			<p class="lead">
-				Business teams are already experimenting with AI to keep up with complexity and
-				workload. Meanwhile, IT, cyber, and compliance teams are trying to protect data,
-				control access, and reduce risk. The result is stalled pilots, fragmented tools, and
-				no clear path to production.
-			</p>
 		</div>
 
 		<div class="adoption-grid">
 			<div class="platform-approach-card adoption-card">
 				<div class="adoption-list">
-					<div class="adoption-list-item">
-						<span class="reason-line" aria-hidden="true"></span>
-						<p>No defined operating model for AI</p>
-					</div>
-					<div class="adoption-list-item">
-						<span class="reason-line" aria-hidden="true"></span>
-						<p>No control over data, model usage, or access</p>
-					</div>
-					<div class="adoption-list-item">
-						<span class="reason-line" aria-hidden="true"></span>
-						<p>Disconnected tools and duplicated workflows</p>
-					</div>
-					<div class="adoption-list-item">
-						<span class="reason-line" aria-hidden="true"></span>
-						<p>No auditability in regulated environments</p>
-					</div>
-				</div>
-				<div class="adoption-workflows">
-					<p class="adoption-workflows-label">Typical workflows affected:</p>
-					<div class="adoption-workflows-list">
-						<p>RFP intake, setup, and triage</p>
-						<p>Claims document processing and adjudication support</p>
-						<p>Financial reconciliation</p>
-						<p>Bordereaux processing and reconciliation</p>
-						<p>Statutory reporting</p>
-					</div>
+					<p>
+						<strong>
+							Specialty insurance teams are turning to AI out of necessity, not
+							experimentation.
+						</strong>
+					</p>
+					<p>
+						Limited vendor support, document-heavy manual workflows, and complex products
+						leave underwriting, claims, and operations teams without scalable systems.
+					</p>
+					<p>
+						This creates an opportunity for specialty insurers to leapfrog legacy tooling by
+						moving directly to governed, agent-based execution rather than waiting for
+						platforms that may never arrive.
+					</p>
 				</div>
 				<p class="adoption-line">
 					NorthLine provides a governed path to deploy AI inside your environment, not around
@@ -230,7 +213,36 @@ const structuredData = [
 		</div>
 
 		<div class="section-cta">
-			<a class="button button-secondary" href="#ai-platform">Review our Approach</a>
+			<a class="button button-secondary" href="#common-workflows">
+				See Common Workflow Opportunities
+			</a>
+		</div>
+	</section>
+
+	<section id="common-workflows" class="section common-workflows-section">
+		<div class="section-heading">
+			<p class="eyebrow">Common Workflows</p>
+			<h2>Where savings and throughput improvements show up first</h2>
+			<p class="lead">
+				Governed AI creates value fastest in document-heavy, operationally repetitive insurance
+				workflows where teams are overloaded and existing systems were never designed to absorb
+				the volume.
+			</p>
+		</div>
+
+		<div class="workflow-savings-grid">
+			{WORKFLOW_SAVINGS.map((item) => (
+				<article class="workflow-savings-card">
+					<h3>{item.title}</h3>
+					<p>{item.description}</p>
+				</article>
+			))}
+		</div>
+
+		<div class="section-cta">
+			<a class="button button-secondary" href="/insurance-ai-workflows">
+				Explore Common Workflows
+			</a>
 		</div>
 	</section>
 

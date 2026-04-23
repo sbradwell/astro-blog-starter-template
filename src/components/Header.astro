@@ -1,15 +1,19 @@
 ---
 import { SITE_TITLE } from '../consts';
 
-const isArchitecturePage =
+const isSubpage =
 	Astro.url.pathname === '/insurance-ai-deployment' ||
-	Astro.url.pathname === '/insurance-ai-deployment/';
-const currentRealityHref = isArchitecturePage ? '/#current-reality' : '#current-reality';
-const practiceHref = isArchitecturePage ? '/#practice' : '#practice';
-const aiPlatformHref = isArchitecturePage ? '/#ai-platform' : '#ai-platform';
+	Astro.url.pathname === '/insurance-ai-deployment/' ||
+	Astro.url.pathname === '/insurance-ai-workflows' ||
+	Astro.url.pathname === '/insurance-ai-workflows/';
+const currentRealityHref = isSubpage ? '/#current-reality' : '#current-reality';
+const practiceHref = isSubpage ? '/#practice' : '#practice';
+const commonWorkflowsHref = isSubpage ? '/#common-workflows' : '#common-workflows';
+const aiPlatformHref = isSubpage ? '/#ai-platform' : '#ai-platform';
 const blueprintHref = '/insurance-ai-deployment';
-const whyHref = isArchitecturePage ? '/#why' : '#why';
-const getStartedHref = isArchitecturePage ? '/#contact' : '#contact';
+const workflowsHref = '/insurance-ai-workflows';
+const whyHref = isSubpage ? '/#why' : '#why';
+const getStartedHref = isSubpage ? '/#contact' : '#contact';
 ---
 
 <header class="site-header">
@@ -53,6 +57,23 @@ const getStartedHref = isArchitecturePage ? '/#contact' : '#contact';
 		<div class="nav-links">
 			<a href={currentRealityHref}>Current Reality</a>
 			<a href={practiceHref}>Practice</a>
+			<div class="nav-subnav" data-subnav>
+				<div class="nav-subnav-trigger">
+					<a class="nav-primary-link" href={commonWorkflowsHref}>Common Workflows</a>
+					<button
+						class="nav-subnav-toggle"
+						type="button"
+						aria-expanded="false"
+						aria-label="Open Common Workflows links"
+						data-subnav-toggle
+					>
+						<span class="nav-subnav-chevron" aria-hidden="true">▾</span>
+					</button>
+				</div>
+				<div class="nav-subnav-menu" hidden>
+					<a class="nav-sublink" href={workflowsHref}>Insurance AI Workflows</a>
+				</div>
+			</div>
 			<div class="nav-subnav" data-subnav>
 				<div class="nav-subnav-trigger">
 					<a class="nav-primary-link" href={aiPlatformHref}>How We Deploy AI</a>
