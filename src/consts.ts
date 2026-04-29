@@ -4,14 +4,14 @@ export const SITE_DESCRIPTION =
 
 export const COMMON_WORKFLOWS = [
 	{
-		title: 'Submission Intake and Triage',
+		title: 'Submission to Quote',
 		problem:
 			'Inbound submissions, broker emails, attachments, and supporting documents create manual sorting and routing work before underwriting can even begin.',
 		opportunity:
 			'AI can classify submissions, extract key details, flag missing information, and route work to the right queue with human review built in.',
 	},
 	{
-		title: 'Claims Document Review',
+		title: 'Claims Adjudication Support',
 		problem:
 			'Claims teams spend too much time reviewing loss runs, adjuster notes, reports, and supporting files across fragmented document sets.',
 		opportunity:

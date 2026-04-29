@@ -2,15 +2,15 @@
 import { SITE_TITLE } from '../consts';
 
 const isSubpage =
-	Astro.url.pathname === '/insurance-ai-deployment' ||
-	Astro.url.pathname === '/insurance-ai-deployment/' ||
+	Astro.url.pathname === '/insurance-ai-platform' ||
+	Astro.url.pathname === '/insurance-ai-platform/' ||
 	Astro.url.pathname === '/specialty-insurance-ai-agents' ||
 	Astro.url.pathname === '/specialty-insurance-ai-agents/';
 const currentRealityHref = isSubpage ? '/#current-reality' : '#current-reality';
 const practiceHref = isSubpage ? '/#practice' : '#practice';
 const agentsHref = isSubpage ? '/#agents' : '#agents';
 const platformHref = isSubpage ? '/#platform' : '#platform';
-const platformPageHref = '/insurance-ai-deployment';
+const platformPageHref = '/insurance-ai-platform';
 const workflowsHref = '/specialty-insurance-ai-agents';
 const whyHref = isSubpage ? '/#why' : '#why';
 const getStartedHref = isSubpage ? '/#contact' : '#contact';

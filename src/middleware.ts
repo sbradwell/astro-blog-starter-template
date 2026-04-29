@@ -28,13 +28,6 @@ const buildContentSecurityPolicy = (isLocalRequest: boolean, shouldUpgradeInsecu
 };
 
 export const onRequest = defineMiddleware(async ({ url }, next) => {
-	if (url.protocol === 'http:' && !isLocalHostname(url.hostname)) {
-		const redirectUrl = new URL(url);
-		redirectUrl.protocol = 'https:';
-
-		return Response.redirect(redirectUrl, 308);
-	}
-
 	const response = await next();
 	const headers = new Headers(response.headers);
 	const isSecureRequest = url.protocol === 'https:';

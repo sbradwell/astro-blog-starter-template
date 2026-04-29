@@ -999,7 +999,8 @@ textarea {
 	.adoption-grid,
 	.stall-grid,
 	.workflow-savings-grid,
-	.workflow-grid {
+	.workflow-grid,
+	.agent-library-grid {
 		grid-template-columns: 1fr;
 	}
 
@@ -1095,6 +1096,8 @@ textarea {
 
 	.hero-panel,
 	.card,
+	.agent-library,
+	.workflow-card,
 	.contact-card,
 	.contact-modal-card,
 	.platform-approach-card,
